@@ -1,0 +1,25 @@
+---
+title: "My First Quarto Document"
+format: html
+---
+# Introduction
+This is a simple document created with *Quarto*.  
+First a mandatory hello world.
+
+Hello, World!
+
+I have absolutely nothing to write here...
+
+## Subsection 
+This is a subsection.  
+Pretty bland, if you ask me. 
+
+# Section 1
+This is section 1.  
+Pretty unremarkable, if you ask me.
+
+# Section 2
+Mathematical expressions.
+Finally something significant.  
+Here is the famous Euler product formula.
+$$\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_{p} \frac{1}{1 - p^{-s}}$$
