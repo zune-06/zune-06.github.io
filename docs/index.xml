@@ -5,54 +5,50 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>myblog</title>
+<title>Joon&#39;s Blog</title>
 <link>https://your-website-url.example.com/</link>
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.9.37</generator>
 <lastBuildDate>Fri, 01 May 2026 15:00:00 GMT</lastBuildDate>
 <item>
-  <title>Post With Code</title>
-  <dc:creator>Harlow Malloc</dc:creator>
-  <link>https://your-website-url.example.com/posts/post-with-code/</link>
+  <title>My First Quarto Document</title>
+  <dc:creator>Hyun Joon</dc:creator>
+  <link>https://your-website-url.example.com/posts/view/</link>
   <description><![CDATA[ 
 
 
 
 
 
-<p>This is a post with executable code.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This is a simple document created with <em>Quarto</em>.<br>
+First a mandatory hello world.</p>
+<p>Hello, World!</p>
+<p>I have absolutely nothing to write here…</p>
+<section id="subsection" class="level2">
+<h2 class="anchored" data-anchor-id="subsection">Subsection</h2>
+<p>This is a subsection.<br>
+Pretty bland, if you ask me.</p>
+</section>
+</section>
+<section id="section-1" class="level1">
+<h1>Section 1</h1>
+<p>This is section 1.<br>
+Pretty unremarkable, if you ask me.</p>
+</section>
+<section id="section-2" class="level1">
+<h1>Section 2</h1>
+<p>Mathematical expressions. Finally something significant.<br>
+Here is the famous Euler product formula. <img src="https://latex.codecogs.com/png.latex?%5Czeta(s)%20=%20%5Csum_%7Bn=1%7D%5E%7B%5Cinfty%7D%20%5Cfrac%7B1%7D%7Bn%5Es%7D%20=%20%5Cprod_%7Bp%7D%20%5Cfrac%7B1%7D%7B1%20-%20p%5E%7B-s%7D%7D"></p>
 
 
+</section>
 
  ]]></description>
-  <category>news</category>
-  <category>code</category>
-  <category>analysis</category>
-  <guid>https://your-website-url.example.com/posts/post-with-code/</guid>
+  <guid>https://your-website-url.example.com/posts/view/</guid>
   <pubDate>Fri, 01 May 2026 15:00:00 GMT</pubDate>
-  <media:content url="https://your-website-url.example.com/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Welcome To My Blog</title>
-  <dc:creator>Tristan O&#39;Malley</dc:creator>
-  <link>https://your-website-url.example.com/posts/welcome/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="https://your-website-url.example.com/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
-
-
-
- ]]></description>
-  <category>news</category>
-  <guid>https://your-website-url.example.com/posts/welcome/</guid>
-  <pubDate>Tue, 28 Apr 2026 15:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

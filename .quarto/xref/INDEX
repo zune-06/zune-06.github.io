@@ -13,5 +13,8 @@
   },
   "view.qmd": {
     "view.html": "d572970f"
+  },
+  "posts/view/index.qmd": {
+    "index.html": "75a5dc27"
   }
 }
