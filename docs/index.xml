@@ -10,9 +10,35 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Fri, 01 May 2026 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 08 May 2026 15:00:00 GMT</lastBuildDate>
 <item>
-  <title>My First Quarto Document</title>
+  <title>An Introduction to Magic Squares</title>
+  <dc:creator>Hyun Joon</dc:creator>
+  <link>https://your-website-url.example.com/posts/intro/intro.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="magic-squares" class="level1">
+<h1>1.Magic Squares</h1>
+<p>A magic square is a square grid of usually positive natural numbers whose sums of the numbers in each row, column, and diagonals are the same.<br>
+Here are a few examples, $$$$</p>
+</section>
+<section id="magic-square-of-squares" class="level1">
+<h1>2.Magic square of squares</h1>
+<p>A magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square.</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://your-website-url.example.com/posts/intro/intro.html</guid>
+  <pubDate>Fri, 08 May 2026 15:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>First Quarto Document and Post</title>
   <dc:creator>Hyun Joon</dc:creator>
   <link>https://your-website-url.example.com/posts/view/</link>
   <description><![CDATA[ 
@@ -23,7 +49,7 @@
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>This is a simple document created with <em>Quarto</em>.<br>
+<p>This is a simple document(and webpage) created with <em>Quarto</em>.<br>
 First a mandatory hello world.</p>
 <p>Hello, World!</p>
 <p>I have absolutely nothing to write here…</p>

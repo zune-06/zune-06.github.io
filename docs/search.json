@@ -9,22 +9,29 @@
   {
     "objectID": "posts/view/index.html",
     "href": "posts/view/index.html",
-    "title": "My First Quarto Document",
+    "title": "First Quarto Document and Post",
     "section": "",
-    "text": "This is a simple document created with Quarto.\nFirst a mandatory hello world.\nHello, World!\nI have absolutely nothing to write here…\n\n\nThis is a subsection.\nPretty bland, if you ask me."
+    "text": "This is a simple document(and webpage) created with Quarto.\nFirst a mandatory hello world.\nHello, World!\nI have absolutely nothing to write here…\n\n\nThis is a subsection.\nPretty bland, if you ask me."
   },
   {
     "objectID": "posts/view/index.html#subsection",
     "href": "posts/view/index.html#subsection",
-    "title": "My First Quarto Document",
+    "title": "First Quarto Document and Post",
     "section": "",
     "text": "This is a subsection.\nPretty bland, if you ask me."
+  },
+  {
+    "objectID": "posts/intro/intro.html",
+    "href": "posts/intro/intro.html",
+    "title": "An Introduction to Magic Squares",
+    "section": "",
+    "text": "1.Magic Squares\nA magic square is a square grid of usually positive natural numbers whose sums of the numbers in each row, column, and diagonals are the same.\nHere are a few examples, $$$$\n\n\n2.Magic square of squares\nA magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Joon’s Blog",
     "section": "",
-    "text": "My First Quarto Document\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\nHyun Joon\n\n\n\n\n\nNo matching items"
+    "text": "An Introduction to Magic Squares\n\n\n\n\n\n\n\n\nMay 9, 2026\n\n\nHyun Joon\n\n\n\n\n\n\n\n\n\n\n\n\nFirst Quarto Document and Post\n\n\n\n\n\n\n\n\nMay 2, 2026\n\n\nHyun Joon\n\n\n\n\n\nNo matching items"
   }
 ]

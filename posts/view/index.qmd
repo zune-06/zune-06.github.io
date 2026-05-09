@@ -1,11 +1,12 @@
 ---
-title: "My First Quarto Document"
+title: "First Quarto Document and Post"
 author: "Hyun Joon"
 date: "2026-05-02"
+category: "test"
 format: html
 ---
 # Introduction
-This is a simple document created with *Quarto*.  
+This is a simple document(and webpage) created with *Quarto*.  
 First a mandatory hello world.
 
 Hello, World!
