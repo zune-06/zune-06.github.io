@@ -3,13 +3,16 @@ title: "An Introduction to Magic Squares"
 author: "Hyun Joon"
 date: "2026-05-09"
 format: html
+image: "magic_square1.png"
 ---
 
 # 1.Magic Squares
 
 A magic square is a square grid of usually positive natural numbers whose sums of the numbers in each row, column, and diagonals are the same.  
 Here are a few examples,
-$$$$
+
+![the famous one](magic_square1.png)
 
 # 2.Magic square of squares
 A magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square.
+

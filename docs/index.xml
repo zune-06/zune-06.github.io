@@ -24,7 +24,13 @@
 <section id="magic-squares" class="level1">
 <h1>1.Magic Squares</h1>
 <p>A magic square is a square grid of usually positive natural numbers whose sums of the numbers in each row, column, and diagonals are the same.<br>
-Here are a few examples, $$$$</p>
+Here are a few examples,</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://your-website-url.example.com/posts/intro/magic_square1.png" class="img-fluid figure-img"></p>
+<figcaption>the famous one</figcaption>
+</figure>
+</div>
 </section>
 <section id="magic-square-of-squares" class="level1">
 <h1>2.Magic square of squares</h1>
@@ -36,6 +42,7 @@ Here are a few examples, $$$$</p>
  ]]></description>
   <guid>https://your-website-url.example.com/posts/intro/intro.html</guid>
   <pubDate>Fri, 08 May 2026 15:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/intro/magic_square1.png" medium="image" type="image/png" height="112" width="144"/>
 </item>
 <item>
   <title>First Quarto Document and Post</title>

@@ -25,7 +25,7 @@
     "href": "posts/intro/intro.html",
     "title": "An Introduction to Magic Squares",
     "section": "",
-    "text": "1.Magic Squares\nA magic square is a square grid of usually positive natural numbers whose sums of the numbers in each row, column, and diagonals are the same.\nHere are a few examples, $$$$\n\n\n2.Magic square of squares\nA magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square."
+    "text": "1.Magic Squares\nA magic square is a square grid of usually positive natural numbers whose sums of the numbers in each row, column, and diagonals are the same.\nHere are a few examples,\n\n\n\nthe famous one\n\n\n\n\n2.Magic square of squares\nA magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square."
   },
   {
     "objectID": "index.html",
