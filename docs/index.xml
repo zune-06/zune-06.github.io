@@ -21,9 +21,33 @@
 
 
 
-<p>After looking at the results from the codes. One can guess that there isn’t a 3x3 magic square of squares whose sum is a perfect square. At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share; that its sum is equal to 3 times the number in the center.</p>
+<section id="motivations" class="level2">
+<h2 class="anchored" data-anchor-id="motivations">Motivations</h2>
+<p>After looking at the results from the codes. One can guess that there isn’t a 3x3 magic square of squares whose sum is a perfect square. At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share That its sum is equal to 3 times the number in the center. With this simple fact a simple proof by contradiction would seem to work best, for we leverage the irrationality of the square root of 3.<br>
+But first, we’ll have to prove that the sum of any 3x3 magic square really is 3 times its center number</p>
+<section id="the-proof-for-the-fun-fact" class="level3">
+<h3 class="anchored" data-anchor-id="the-proof-for-the-fun-fact">The Proof for the Fun Fact</h3>
+</section>
+</section>
+<section id="the-proof-for-squares" class="level2">
+<h2 class="anchored" data-anchor-id="the-proof-for-squares">The proof for squares</h2>
+</section>
+<section id="observations-generalizations" class="level1">
+<h1>Observations &amp; Generalizations</h1>
+<p>The proof for squares seems to be easily generalizable to any even power and with a clever insight to all perfect powers. The next section does exactly this.</p>
+<section id="for-all-even-powers" class="level2">
+<h2 class="anchored" data-anchor-id="for-all-even-powers">For All Even Powers</h2>
+<p>“PLACE_HOLDER”</p>
+<p>##For All Odd Powers</p>
+<p>“PLACE_HOLDER”</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>With these simple proof the sum for a 3x3 magic square is a non-power, like <img src="https://latex.codecogs.com/png.latex?1,%202,%203,%205,%206,%207,%2012">, et cetera.</p>
 
 
+</section>
 
  ]]></description>
   <category>magic squares</category>
@@ -2905,18 +2929,18 @@ First a mandatory hello world.</p>
 <section id="subsection" class="level2">
 <h2 class="anchored" data-anchor-id="subsection">Subsection</h2>
 <p>This is a subsection.<br>
-Pretty bland, if you ask me.</p>
+Pretty bland.(if you ask me)</p>
 </section>
 </section>
 <section id="section-1" class="level1">
 <h1>Section 1</h1>
 <p>This is section 1.<br>
-Pretty unremarkable, if you ask me.</p>
+Pretty unremarkable.(if you ask me)</p>
 </section>
 <section id="section-2" class="level1">
 <h1>Section 2</h1>
-<p>Mathematical expressions. Finally something significant.<br>
-Here is the famous Euler product formula. <img src="https://latex.codecogs.com/png.latex?%5Czeta(s)%20=%20%5Csum_%7Bn=1%7D%5E%7B%5Cinfty%7D%20%5Cfrac%7B1%7D%7Bn%5Es%7D%20=%20%5Cprod_%7Bp%7D%20%5Cfrac%7B1%7D%7B1%20-%20p%5E%7B-s%7D%7D"></p>
+<p>Mathematical expressions. (finally something significant)<br>
+The famous Euler product formula. <img src="https://latex.codecogs.com/png.latex?%5Czeta(s)%20=%20%5Csum_%7Bn=1%7D%5E%7B%5Cinfty%7D%20%5Cfrac%7B1%7D%7Bn%5Es%7D%20=%20%5Cprod_%7Bp%7D%20%5Cfrac%7B1%7D%7B1%20-%20p%5E%7B-s%7D%7D"></p>
 
 
 </section>

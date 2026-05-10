@@ -11,21 +11,42 @@
     "href": "posts/view/index.html",
     "title": "First Quarto Document and Post",
     "section": "",
-    "text": "This is a simple document(and webpage) created with Quarto.\nFirst a mandatory hello world.\nHello, World!\nI have absolutely nothing to write here…\n\n\nThis is a subsection.\nPretty bland, if you ask me."
+    "text": "This is a simple document(and webpage) created with Quarto.\nFirst a mandatory hello world.\nHello, World!\nI have absolutely nothing to write here…\n\n\nThis is a subsection.\nPretty bland.(if you ask me)"
   },
   {
     "objectID": "posts/view/index.html#subsection",
     "href": "posts/view/index.html#subsection",
     "title": "First Quarto Document and Post",
     "section": "",
-    "text": "This is a subsection.\nPretty bland, if you ask me."
+    "text": "This is a subsection.\nPretty bland.(if you ask me)"
   },
   {
     "objectID": "posts/proof1/index.html",
     "href": "posts/proof1/index.html",
     "title": "The sum of a magic square of squares must be a non-power",
     "section": "",
-    "text": "After looking at the results from the codes. One can guess that there isn’t a 3x3 magic square of squares whose sum is a perfect square. At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share; that its sum is equal to 3 times the number in the center."
+    "text": "After looking at the results from the codes. One can guess that there isn’t a 3x3 magic square of squares whose sum is a perfect square. At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share That its sum is equal to 3 times the number in the center. With this simple fact a simple proof by contradiction would seem to work best, for we leverage the irrationality of the square root of 3.\nBut first, we’ll have to prove that the sum of any 3x3 magic square really is 3 times its center number"
+  },
+  {
+    "objectID": "posts/proof1/index.html#motivations",
+    "href": "posts/proof1/index.html#motivations",
+    "title": "The sum of a magic square of squares must be a non-power",
+    "section": "",
+    "text": "After looking at the results from the codes. One can guess that there isn’t a 3x3 magic square of squares whose sum is a perfect square. At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share That its sum is equal to 3 times the number in the center. With this simple fact a simple proof by contradiction would seem to work best, for we leverage the irrationality of the square root of 3.\nBut first, we’ll have to prove that the sum of any 3x3 magic square really is 3 times its center number"
+  },
+  {
+    "objectID": "posts/proof1/index.html#the-proof-for-squares",
+    "href": "posts/proof1/index.html#the-proof-for-squares",
+    "title": "The sum of a magic square of squares must be a non-power",
+    "section": "The proof for squares",
+    "text": "The proof for squares"
+  },
+  {
+    "objectID": "posts/proof1/index.html#for-all-even-powers",
+    "href": "posts/proof1/index.html#for-all-even-powers",
+    "title": "The sum of a magic square of squares must be a non-power",
+    "section": "For All Even Powers",
+    "text": "For All Even Powers\n“PLACE_HOLDER”\n##For All Odd Powers\n“PLACE_HOLDER”"
   },
   {
     "objectID": "posts/intro/index.html",
