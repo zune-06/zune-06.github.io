@@ -12,8 +12,9 @@ Ignoring the fact that it has been done(and upto the trillions) to do so we'd ne
 Since the program doesn't need to be heavily optimized we'll just write it in python.
 
 # The program
-This is a simple python code for finding magic square of squares.  
-A naïve approach but spamming for loops works well enough.
+This is a simple python code for finding magic square of squares.
+A naïve approach to be sure but spamming for loops works well enough.  
+The method is to look for magic square of squares using the pythagorean quadruples, since there is a way to parametricallly generate them.
 
 ```python
 

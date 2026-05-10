@@ -72,8 +72,8 @@ Since the program doesn’t need to be heavily optimized we’ll just write it i
 </section>
 <section id="the-program" class="level1">
 <h1>The program</h1>
-<p>This is a simple python code for finding magic square of squares.<br>
-A naïve approach but spamming for loops works well enough.</p>
+<p>This is a simple python code for finding magic square of squares. A naïve approach to be sure but spamming for loops works well enough.<br>
+The method is to look for magic square of squares using the pythagorean quadruples, since there is a way to parametricallly generate them.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"></span>
 <span id="cb1-2"><span class="im" style="color: #00769E;
 background-color: null;
