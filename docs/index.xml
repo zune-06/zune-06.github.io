@@ -72,7 +72,9 @@ This one is 4 by 4 and sums to 34</p>
 </section>
 <section id="magic-square-of-squares" class="level1">
 <h1>2.Magic square of squares</h1>
-<p>A magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square.</p>
+<p>A magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square.<br>
+No 3 by 3 magic square of squares has been found, but other magic square of squares have been.</p>
+<p>Here’s one found by Euler. Its sum is 8,515. <img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Barray%7D%7Bc%7Cc%7Cc%7Cc%7D%0A68%5E%7B2%7D%20&amp;%2029%5E%7B2%7D%20&amp;%2041%5E%7B2%7D%20&amp;%2037%5E%7B2%7D%20%5C%5C%20%5Chline%0A17%5E%7B2%7D%20&amp;%2031%5E%7B2%7D%20&amp;%2079%5E%7B2%7D%20&amp;%2032%5E%7B2%7D%20%5C%5C%20%5Chline%0A59%5E%7B2%7D%20&amp;%2028%5E%7B2%7D%20&amp;%2023%5E%7B2%7D%20&amp;%2061%5E%7B2%7D%20%5C%5C%20%5Chline%0A11%5E%7B2%7D%20&amp;%2077%5E%7B2%7D%20&amp;%208%5E%7B2%7D%20&amp;%2049%5E%7B2%7D%0A%5Cend%7Barray%7D%0A"></p>
 
 
 </section>

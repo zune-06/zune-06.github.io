@@ -33,5 +33,15 @@ $$
 This one is 4 by 4 and sums to 34
 
 # 2.Magic square of squares
-A magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square.
+A magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square.  
+No 3 by 3 magic square of squares has been found, but other magic square of squares have been.
 
+Here's one found by Euler. Its sum is 8,515.
+$$
+\begin{array}{c|c|c|c}
+68^{2} & 29^{2} & 41^{2} & 37^{2} \\ \hline
+17^{2} & 31^{2} & 79^{2} & 32^{2} \\ \hline
+59^{2} & 28^{2} & 23^{2} & 61^{2} \\ \hline
+11^{2} & 77^{2} & 8^{2} & 49^{2}
+\end{array}
+$$  
