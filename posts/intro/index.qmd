@@ -13,6 +13,25 @@ Here are a few examples,
 
 ![the famous one](magic_square1.png)
 
+$$
+\begin{array}{c|c|c}
+17 & 113 & 47 \\ \hline
+89 & 59 & 29 \\ \hline
+71 & 5 & 101
+\end{array}
+$$  
+This one is made of primes. It's sum is 177
+ 
+$$
+\begin{array}{c|c|c|c}
+7 & 12 & 1 & 14 \\ \hline
+2 & 13 & 8 & 11 \\ \hline
+16 & 3 & 10 & 5 \\ \hline
+9 & 6 & 15 & 4
+\end{array}
+$$  
+This one is 4 by 4 and sums to 34
+
 # 2.Magic square of squares
 A magic square is a magic square of square if the numbers in each cell can be squared and the resulting grid is also a magic square.
 

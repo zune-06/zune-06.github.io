@@ -1,0 +1,6 @@
+---
+title: "Rudimentary code for searching magic square of squares"
+author: "Hyun Joon"
+date: "2026-05-10"
+format: html
+---

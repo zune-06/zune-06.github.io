@@ -10,11 +10,45 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Fri, 08 May 2026 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 09 May 2026 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>No magic square of squares can have a perfect square as its sum</title>
+  <dc:creator>Hyun Joon</dc:creator>
+  <link>https://your-website-url.example.com/posts/proof1/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+
+ ]]></description>
+  <guid>https://your-website-url.example.com/posts/proof1/</guid>
+  <pubDate>Sat, 09 May 2026 15:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Rudimentary code for searching magic square of squares</title>
+  <dc:creator>Hyun Joon</dc:creator>
+  <link>https://your-website-url.example.com/posts/code/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+
+ ]]></description>
+  <guid>https://your-website-url.example.com/posts/code/</guid>
+  <pubDate>Sat, 09 May 2026 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>An Introduction to Magic Squares</title>
   <dc:creator>Hyun Joon</dc:creator>
-  <link>https://your-website-url.example.com/posts/intro/intro.html</link>
+  <link>https://your-website-url.example.com/posts/intro/</link>
   <description><![CDATA[ 
 
 
@@ -31,6 +65,10 @@ Here are a few examples,</p>
 <figcaption>the famous one</figcaption>
 </figure>
 </div>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Barray%7D%7Bc%7Cc%7Cc%7D%0A17%20&amp;%20113%20&amp;%2047%20%5C%5C%20%5Chline%0A89%20&amp;%2059%20&amp;%2029%20%5C%5C%20%5Chline%0A71%20&amp;%205%20&amp;%20101%0A%5Cend%7Barray%7D%0A"><br>
+This one is made of primes. It’s sum is 177</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Barray%7D%7Bc%7Cc%7Cc%7Cc%7D%0A7%20&amp;%2012%20&amp;%201%20&amp;%2014%20%5C%5C%20%5Chline%0A2%20&amp;%2013%20&amp;%208%20&amp;%2011%20%5C%5C%20%5Chline%0A16%20&amp;%203%20&amp;%2010%20&amp;%205%20%5C%5C%20%5Chline%0A9%20&amp;%206%20&amp;%2015%20&amp;%204%0A%5Cend%7Barray%7D%0A"><br>
+This one is 4 by 4 and sums to 34</p>
 </section>
 <section id="magic-square-of-squares" class="level1">
 <h1>2.Magic square of squares</h1>
@@ -40,7 +78,7 @@ Here are a few examples,</p>
 </section>
 
  ]]></description>
-  <guid>https://your-website-url.example.com/posts/intro/intro.html</guid>
+  <guid>https://your-website-url.example.com/posts/intro/</guid>
   <pubDate>Fri, 08 May 2026 15:00:00 GMT</pubDate>
   <media:content url="https://your-website-url.example.com/posts/intro/magic_square1.png" medium="image" type="image/png" height="112" width="144"/>
 </item>

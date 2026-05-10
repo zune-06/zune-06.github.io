@@ -19,5 +19,14 @@
   },
   "posts/intro/intro.qmd": {
     "intro.html": "f9efaf16"
+  },
+  "posts/intro/index.qmd": {
+    "index.html": "55ffb4ca"
+  },
+  "posts/proof1/index.qmd": {
+    "index.html": "87134c2a"
+  },
+  "posts/code/index.qmd": {
+    "index.html": "3d0c6c8d"
   }
 }

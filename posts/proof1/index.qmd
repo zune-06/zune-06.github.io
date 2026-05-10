@@ -1,0 +1,6 @@
+---
+title: "No magic square of squares can have a perfect square as its sum"
+author: "Hyun Joon"
+date: "2026-05-10"
+format: html
+---
