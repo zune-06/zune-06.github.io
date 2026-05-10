@@ -1,6 +1,11 @@
 ---
-title: "No magic square of squares can have a perfect square as its sum"
+title: "The sum of a magic square of squares must be a non-power"
 author: "Hyun Joon"
 date: "2026-05-10"
+categories: ["magic squares"]
 format: html
 ---
+
+After looking at the results from the codes. One can guess that there isn't a 3x3 magic square of squares whose sum is a perfect square.
+At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share; that its sum is equal to 3 times the number in the center.
+

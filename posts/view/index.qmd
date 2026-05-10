@@ -2,7 +2,7 @@
 title: "First Quarto Document and Post"
 author: "Hyun Joon"
 date: "2026-05-02"
-category: "test"
+categories: []
 format: html
 ---
 # Introduction

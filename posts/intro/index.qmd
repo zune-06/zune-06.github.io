@@ -2,6 +2,7 @@
 title: "An Introduction to Magic Squares"
 author: "Hyun Joon"
 date: "2026-05-09"
+categories: ["magic squares"]
 format: html
 image: "magic_square1.png"
 ---

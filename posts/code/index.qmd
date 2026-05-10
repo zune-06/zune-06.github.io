@@ -2,5 +2,427 @@
 title: "Rudimentary code for searching magic square of squares"
 author: "Hyun Joon"
 date: "2026-05-10"
+categories: ["magic squares"]
 format: html
 ---
+
+# Computers
+The first attempt that one can think of is using computers to just get a magic square of squares.  
+Ignoring the fact that it has been done(and upto the trillions) to do so we'd need a program.  
+Since the program doesn't need to be heavily optimized we'll just write it in python.
+
+# The program
+This is a simple python code for finding magic square of squares.  
+A naïve approach but spamming for loops works well enough.
+
+```python
+
+from itertools import permutations as iperms, combinations
+from collections import defaultdict
+from math import isqrt
+
+
+# 1. Parametric generation
+
+def find_quadruples_parametric(d_max: int) -> dict[int, set[tuple]]:
+    """
+    Build  solutions[d] = { (a,b,c), ... }  where a²+b²+c² = d².
+
+    Uses the parametric form:
+        a = |m²+n²-p²-q²|,  b = 2(mq+np),  c = 2|nq-mp|
+        d =  m²+n²+p²+q²
+    for m,n,p,q > 0, gcd(m,n,p,q)=1, (m+n+p+q) odd.
+    Non-primitives are covered by multiples k*(a,b,c,d).
+    """
+    from math import gcd
+
+    primitives: set[tuple] = set()
+    param_max = int(d_max ** 0.5) + 2
+
+    for m in range(1, param_max):
+        for n in range(1, param_max):
+            for p in range(1, param_max):
+                for q in range(1, param_max):
+                    d = m*m + n*n + p*p + q*q
+                    if d > d_max:
+                        break
+                    if (m + n + p + q) % 2 == 0:
+                        continue
+                    if gcd(gcd(m, n), gcd(p, q)) != 1:
+                        continue
+                    a = abs(m*m + n*n - p*p - q*q)
+                    b = 2 * (m*q + n*p)
+                    c = 2 * abs(n*q - m*p)
+                    if a == 0 or b == 0 or c == 0:
+                        continue
+                    primitives.add((*tuple(sorted((a, b, c))), d))
+
+    solutions: dict[int, set[tuple]] = defaultdict(set)
+    for (a, b, c, d) in primitives:
+        k = 1
+        while k * d <= d_max:
+            solutions[k * d].add(tuple(sorted((k*a, k*b, k*c))))
+            k += 1
+    return dict(solutions)
+
+
+# 2. Repetition finder
+
+def analyze_repetitions(d: int, triples: set[tuple]) -> dict:
+    """
+    For each value that appears across the triples of this d, count
+    how many triples it belongs to.  This tells us which positions
+    in a magic square each value is eligible for.
+
+    Returns
+    -------
+    dict with keys:
+        freq              – {value: count}
+        value_to_triples  – {value: set of triples containing it}
+        center_candidates – values with freq >= 4  (needed for 8/8)
+        corner_candidates – values with freq >= 3
+        usable_values     – values with freq >= 2  (can appear in 6/8 grid)
+        solo_values       – values with freq == 1  (useless for magic squares)
+    """
+    freq: dict[int, int] = defaultdict(int)
+    value_to_triples: dict[int, set] = defaultdict(set)
+
+    for triple in triples:
+        for v in triple:
+            freq[v] += 1
+            value_to_triples[v].add(triple)
+
+    return {
+        "freq":             dict(freq),
+        "value_to_triples": dict(value_to_triples),
+        "center_candidates": sorted(v for v, f in freq.items() if f >= 4),
+        "corner_candidates": sorted(v for v, f in freq.items() if f >= 3),
+        "usable_values":     sorted(v for v, f in freq.items() if f >= 2),
+        "solo_values":       sorted(v for v, f in freq.items() if f == 1),
+    }
+
+
+# 3. Make grid
+
+_LINES = [
+    (0, 1, 2),  # row 0
+    (3, 4, 5),  # row 1
+    (6, 7, 8),  # row 2
+    (0, 3, 6),  # col 0
+    (1, 4, 7),  # col 1
+    (2, 5, 8),  # col 2
+    (0, 4, 8),  # diag ↘
+    (2, 4, 6),  # diag ↗
+]
+
+_LINE_NAMES = [
+    "row 0", "row 1", "row 2",
+    "col 0", "col 1", "col 2",
+    "diag ↘", "diag ↗",
+]
+
+def _valid_lines(flat: tuple, S: int) -> list[str]:
+    return [
+        _LINE_NAMES[i]
+        for i, (p, q, r) in enumerate(_LINES)
+        if flat[p]**2 + flat[q]**2 + flat[r]**2 == S
+    ]
+
+def _make_result(flat: tuple, S: int, d: int, note: str = "") -> dict:
+    score = sum(
+        1 for (p, q, r) in _LINES
+        if flat[p]**2 + flat[q]**2 + flat[r]**2 == S
+    )
+    return {
+        "grid":        [list(flat[0:3]), list(flat[3:6]), list(flat[6:9])],
+        "flat":        flat,
+        "score":       score,
+        "valid_lines": _valid_lines(flat, S),
+        "S":           S,
+        "d":           d,
+        "method":      note,
+    }
+
+def _is_perfect_square(n: int):
+    if n <= 0:
+        return None
+    r = isqrt(n)
+    return r if r * r == n else None
+
+
+# 4. search for magic squares (8/8)
+
+def find_magic_center_out(d: int, triples: set[tuple],
+                          analysis: dict) -> dict | None:
+    """
+    Grid layout:
+        a  b  c
+        d  e  f   ← row 1  (e is center)
+        g  h  i
+
+    e appears in 4 lines:
+        row 1  →  (d, e, f)
+        col 1  →  (b, e, h)
+        diag ↘ →  (a, e, i)
+        diag ↗ →  (c, e, g)
+
+    Once we assign 4 triples to these lines and choose orientations,
+    all 9 values are fixed.  We then verify the 4 remaining lines:
+        row 0: a²+b²+c² = S
+        row 2: g²+h²+i² = S
+        col 0: a²+d²+g² = S
+        col 2: c²+f²+i² = S
+    """
+    S = d * d
+    v2t = analysis["value_to_triples"]
+
+    for e in analysis["center_candidates"]:
+        e_triples = list(v2t[e])
+
+        # Try every combination of 4 triples for the 4 center lines
+        for combo in combinations(e_triples, 4):
+
+            # Try every assignment of which triple goes to which line
+            for row1_t, col1_t, d1_t, d2_t in iperms(combo):
+
+                # Extract the two non-center values from each triple
+                r1 = [v for v in row1_t if v != e]  # → [d_val, f]
+                c1 = [v for v in col1_t if v != e]  # → [b, h]
+                dg1 = [v for v in d1_t   if v != e]  # → [a, i]  (diag ↘)
+                dg2 = [v for v in d2_t   if v != e]  # → [c, g]  (diag ↗)
+
+                if len(r1) != 2 or len(c1) != 2 or len(dg1) != 2 or len(dg2) != 2:
+                    continue
+
+                # Try all 2^4 = 16 orientations
+                for d_val, f in (r1, r1[::-1]):
+                    for b, h in (c1, c1[::-1]):
+                        for a, i in (dg1, dg1[::-1]):
+                            for c_val, g in (dg2, dg2[::-1]):
+
+                                # Check all 9 values are distinct
+                                all9 = {a, b, c_val, d_val, e, f, g, h, i}
+                                if len(all9) != 9:
+                                    continue
+
+                                # Check the 4 non-center lines
+                                if a*a + b*b + c_val*c_val != S:
+                                    continue
+                                if g*g + h*h + i*i != S:
+                                    continue
+                                if a*a + d_val*d_val + g*g != S:
+                                    continue
+                                if c_val*c_val + f*f + i*i != S:
+                                    continue
+
+                                # All 8 lines valid!
+                                flat = (a, b, c_val, d_val, e, f, g, h, i)
+                                return _make_result(flat, S, d,
+                                                    note=f"center-out (e={e})")
+
+    return None
+
+
+# 5. search for imperfect one
+
+def find_magic_row_pair(d: int, triples: set[tuple]) -> dict | None:
+    """
+    Fix row0 and row1 as valid triples.  Row2 is determined by columns:
+        g = sqrt(S - a² - d²),  h = sqrt(S - b² - e²),  i = sqrt(S - c² - f²)
+    Row2 is automatically valid (3S - S - S = S).  Check diagonals.
+    """
+    S = d * d
+    row_candidates = [perm for t in triples for perm in iperms(t)]
+
+    best_score  = 0
+    best_result = None
+
+    for r0 in row_candidates:
+        a, b, c = r0
+        used0 = frozenset(r0)
+
+        for r1 in row_candidates:
+            dv, e, f = r1
+            if frozenset(r1) & used0:
+                continue
+
+            g = _is_perfect_square(S - a*a - dv*dv)
+            if g is None: continue
+            h = _is_perfect_square(S - b*b - e*e)
+            if h is None: continue
+            i = _is_perfect_square(S - c*c - f*f)
+            if i is None: continue
+
+            if len({a, b, c, dv, e, f, g, h, i}) != 9:
+                continue
+
+            flat  = (a, b, c, dv, e, f, g, h, i)
+            diag1 = (a*a + e*e + i*i == S)
+            diag2 = (c*c + e*e + g*g == S)
+            score = 6 + diag1 + diag2
+
+            if score > best_score:
+                best_score  = score
+                best_result = _make_result(flat, S, d, note="row-pair")
+
+            if best_score == 8:
+                return best_result
+
+    return best_result
+
+
+# 6. Search & scoring
+
+def find_best_magic_square(d: int, triples: set[tuple]) -> dict | None:
+    """
+    Run center-out first (if any center candidates exist), then fall back
+    to row-pair.  Return the highest-scoring result found.
+    """
+    rep = analyze_repetitions(d, triples)
+
+    result = None
+    if rep["center_candidates"]:
+        result = find_magic_center_out(d, triples, rep)
+
+    if result and result["score"] == 8:
+        return result   # perfect — done
+
+    rp = find_magic_row_pair(d, triples)
+    if rp and (result is None or rp["score"] > result["score"]):
+        result = rp
+
+    return result
+
+
+def score_all(solutions: dict, min_triples: int = 3) -> list[dict]:
+    results   = []
+    candidates = {d: t for d, t in solutions.items() if len(t) >= min_triples}
+    total     = len(candidates)
+
+    for idx, (d, triples) in enumerate(sorted(candidates.items()), 1):
+        rep = analyze_repetitions(d, triples)
+        n_center = len(rep["center_candidates"])
+        note = f"  [center candidates: {n_center}]" if n_center else ""
+        R = len(triples) * 6
+        print(f"  d={d:>4}  ({len(triples):>2} triples, R={R:>3},"
+              f" pairs={R*R:>6}){note}  [{idx}/{total}]")
+        result = find_best_magic_square(d, triples)
+        if result:
+            results.append(result)
+
+    results.sort(key=lambda r: r["score"], reverse=True)
+    return results
+
+
+# 7. Find repetition
+
+def print_repetition_report(d: int, triples: set[tuple]) -> None:
+    """Print a detailed repetition analysis for a single d value."""
+    rep = analyze_repetitions(d, triples)
+    S   = d * d
+
+    print(f"\n  d={d},  S=d²={S},  {len(triples)} triples")
+    print("  Triples:")
+    for t in sorted(triples):
+        vals_in_t = [v for v in rep["freq"] if v in t]
+        print(f"    {t}")
+
+    print()
+    print("  Value frequencies (how many triples contain each value):")
+    by_freq = defaultdict(list)
+    for v, f in sorted(rep["freq"].items()):
+        by_freq[f].append(v)
+    for f in sorted(by_freq, reverse=True):
+        role = {4: "CENTER candidate", 3: "CORNER candidate",
+                2: "EDGE candidate",   1: "unusable"}.get(f, f"freq {f}")
+        print(f"    freq={f} [{role}]: {sorted(by_freq[f])}")
+
+    if rep["center_candidates"]:
+        print(f"\n  8/8 MAY be possible — center candidates: {rep['center_candidates']}")
+    else:
+        print("\n  8/8 impossible for this d (no value appears in 4+ triples)")
+
+
+# 8. Print grids
+
+def print_grid(result: dict) -> None:
+    grid  = result["grid"]
+    flat  = result["flat"]
+    S     = result["S"]
+    d     = result["d"]
+
+    print(f"\n  d={d}  S=d²={S}  score={result['score']}/8"
+          f"  method={result['method']}")
+    print(f"  Valid: {result['valid_lines']}")
+
+    print("\n  Values:")
+    for row in grid:
+        print("   ", "  ".join(f"{v:>5}" for v in row))
+    print("  Squares:")
+    for row in grid:
+        print("   ", "  ".join(f"{v**2:>7}" for v in row))
+
+    print("  Line check:")
+    for name, (p, q, r) in zip(_LINE_NAMES, _LINES):
+        total = flat[p]**2 + flat[q]**2 + flat[r]**2
+        mark  = "OK" if total == S else "--"
+        print(f"    [{mark}] {name:8}: {flat[p]:>3}²+{flat[q]:>3}²+{flat[r]:>3}² = {total}")
+
+
+# 9. int main()
+
+if __name__ == "__main__":
+    import sys
+
+    D_MAX       = int(sys.argv[1]) if len(sys.argv) > 1 else 100
+    MIN_TRIPLES = int(sys.argv[2]) if len(sys.argv) > 2 else 3
+
+    print("=" * 65)
+    print("  Pythagorean Quadruples + Magic Square Solver")
+    print(f"  d_max={D_MAX},  min_triples={MIN_TRIPLES}")
+    print("=" * 65)
+
+    solutions = find_quadruples_parametric(D_MAX)
+    total     = sum(len(v) for v in solutions.values())
+    print(f"\nDistinct d values : {len(solutions)}")
+    print(f"Total triples     : {total}\n")
+
+    # --- Triple count ranking ---
+    print("Triple count ranking (top 10):")
+    print("-" * 65)
+    ranked = sorted(solutions.items(), key=lambda x: len(x[1]), reverse=True)[:10]
+    for rank, (d, triples) in enumerate(ranked, 1):
+        rep = analyze_repetitions(d, triples)
+        centers = rep["center_candidates"]
+        center_str = f"  centers: {centers}" if centers else "  no center candidates"
+        print(f"  #{rank:>2}  d={d:>5}  S={d*d:>8}  {len(triples):>3} triples{center_str}")
+
+    # --- Repetition analysis for candidates with the most triples ---
+    top_d = sorted(solutions, key=lambda d: len(solutions[d]), reverse=True)[:5]
+    print("\nRepetition analysis for top-5 most-triple d values:")
+    print("-" * 65)
+    for d in sorted(top_d):
+        print_repetition_report(d, solutions[d])
+
+    # --- Full search ---
+    print(f"\n{'='*65}")
+    print("  Full search (center-out first, row-pair fallback)")
+    print("=" * 65)
+    results = score_all(solutions, min_triples=MIN_TRIPLES)
+
+    print(f"\n{'='*65}")
+    print("  Top results")
+    print("=" * 65)
+    for r in results[:8]:
+        print_grid(r)
+
+    print(f"\n{'='*65}")
+    print("  Score distribution")
+    print("=" * 65)
+    freq = defaultdict(int)
+    for r in results:
+        freq[r["score"]] += 1
+    for s in sorted(freq, reverse=True):
+        print(f"  {s}/8  {'#'*freq[s]}  ({freq[s]})")
+
+```
