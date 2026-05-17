@@ -64,7 +64,6 @@ The proof for squares seems to be easily generalizable to any even power and wit
 
 ## For All Even Powers
 
-"PLACE_HOLDER"
 
 ## For Odd Powers
 
