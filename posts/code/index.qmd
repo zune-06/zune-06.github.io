@@ -1,5 +1,5 @@
 ---
-title: "Rudimentary code for searching magic square of squares"
+title: "Rudimentary Code for Searching Magic Square of Squares"
 author: "Hyun Joon"
 date: "2026-05-10"
 categories: ["magic squares"]
@@ -11,10 +11,13 @@ The first attempt that one can think of is using computers to just get a magic s
 Ignoring the fact that it has been done(and upto the trillions) to do so we'd need a program.  
 Since the program doesn't need to be heavily optimized we'll just write it in python.
 
-# The program
+## The program
 This is a simple python code for finding magic square of squares.
 A naïve approach to be sure but spamming for loops works well enough.  
-The method is to look for magic square of squares using the pythagorean quadruples, since there is a way to parametricallly generate them.
+The method used is to look for magic square of squares using the pythagorean quadruples.
+For Pythagorean quadruples can be parametrically generated with the following formula.
+$$a = (m²+n²-p²-q²),\ b = 2(mq+np),\ c = 2(nq-mp),\ d = m²+n²+p²+q²$$
+
 
 ```python
 
@@ -30,7 +33,7 @@ def find_quadruples_parametric(d_max: int) -> dict[int, set[tuple]]:
     Build  solutions[d] = { (a,b,c), ... }  where a²+b²+c² = d².
 
     Uses the parametric form:
-        a = |m²+n²-p²-q²|,  b = 2(mq+np),  c = 2|nq-mp|
+        a = (m²+n²-p²-q²),  b = 2(mq+np),  c = 2(nq-mp)
         d =  m²+n²+p²+q²
     for m,n,p,q > 0, gcd(m,n,p,q)=1, (m+n+p+q) odd.
     Non-primitives are covered by multiples k*(a,b,c,d).
@@ -426,4 +429,28 @@ if __name__ == "__main__":
     for s in sorted(freq, reverse=True):
         print(f"  {s}/8  {'#'*freq[s]}  ({freq[s]})")
 
+```
+
+# Results
+
+Here are the results when d = 10,000 in a pie chart.
+
+```python
+from matplotlib import pyplot as plt
+
+# Data to plot
+labels = ['Apples', 'Bananas', 'Cherries', 'Dates']
+sizes = [35, 25, 25, 15]
+colors = ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue']
+
+# Create the pie chart
+plt.figure(figsize=(6, 6))
+plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+
+# Equal aspect ratio ensures that pie is drawn as a circle
+plt.axis('equal')  
+
+# Add a title and display the chart
+plt.title('Placeholder Pie Chart')
+plt.show()
 ```

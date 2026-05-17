@@ -12,7 +12,7 @@
 <generator>quarto-1.9.37</generator>
 <lastBuildDate>Sat, 09 May 2026 15:00:00 GMT</lastBuildDate>
 <item>
-  <title>The sum of a magic square of squares must be a non-power</title>
+  <title>The Sum of a Magic Square of Squares Must Be an Odd-Power</title>
   <dc:creator>Hyun Joon</dc:creator>
   <link>https://your-website-url.example.com/posts/proof1/</link>
   <description><![CDATA[ 
@@ -21,16 +21,16 @@
 
 
 
-<section id="motivations" class="level2">
-<h2 class="anchored" data-anchor-id="motivations">Motivations</h2>
+<section id="motivation" class="level1">
+<h1>Motivation</h1>
 <p>After looking at the results from the codes. One can guess that there isn’t a 3x3 magic square of squares whose sum is a perfect square. At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share That its sum is equal to 3 times the number in the center. With this simple fact a simple proof by contradiction would seem to work best, for we leverage the irrationality of the square root of 3.<br>
 But first, we’ll have to prove that the sum of any 3x3 magic square really is 3 times its center number</p>
-<section id="the-proof-for-the-fun-fact" class="level3">
-<h3 class="anchored" data-anchor-id="the-proof-for-the-fun-fact">The Proof for the Fun Fact</h3>
-</section>
+<section id="the-proof-for-the-fun-fact" class="level2">
+<h2 class="anchored" data-anchor-id="the-proof-for-the-fun-fact">The Proof for the Fun Fact</h2>
 </section>
 <section id="the-proof-for-squares" class="level2">
-<h2 class="anchored" data-anchor-id="the-proof-for-squares">The proof for squares</h2>
+<h2 class="anchored" data-anchor-id="the-proof-for-squares">The Proof for Squares</h2>
+</section>
 </section>
 <section id="observations-generalizations" class="level1">
 <h1>Observations &amp; Generalizations</h1>
@@ -38,13 +38,16 @@ But first, we’ll have to prove that the sum of any 3x3 magic square really is 
 <section id="for-all-even-powers" class="level2">
 <h2 class="anchored" data-anchor-id="for-all-even-powers">For All Even Powers</h2>
 <p>“PLACE_HOLDER”</p>
-<p>##For All Odd Powers</p>
-<p>“PLACE_HOLDER”</p>
+</section>
+<section id="for-odd-powers" class="level2">
+<h2 class="anchored" data-anchor-id="for-odd-powers">For Odd Powers</h2>
+<p>A similar proof was thought of for all odd powers, but after further inspection the proof didn’t work so unfortunately there isn’t one for all odd powers.<br>
+In fact, contrary to expectations any odd power can’t be disproven to be the sum only leverging the irrationality of 3. There might be other ways of disproving specific odd powers of all odd powers all together, but it hasn’t been found.</p>
 </section>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>With these simple proof the sum for a 3x3 magic square is a non-power, like <img src="https://latex.codecogs.com/png.latex?1,%202,%203,%205,%206,%207,%2012">, et cetera.</p>
+<p>With these simple proof the sum for a 3x3 magic square is an odd power, like <img src="https://latex.codecogs.com/png.latex?1,%202,%203,%205,%206,%207,%208,%2010,%2011,%2012,%20%5Ctext%7Betc.%7D"></p>
 
 
 </section>
@@ -55,7 +58,7 @@ But first, we’ll have to prove that the sum of any 3x3 magic square really is 
   <pubDate>Sat, 09 May 2026 15:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Rudimentary code for searching magic square of squares</title>
+  <title>Rudimentary Code for Searching Magic Square of Squares</title>
   <dc:creator>Hyun Joon</dc:creator>
   <link>https://your-website-url.example.com/posts/code/</link>
   <description><![CDATA[ 
@@ -69,11 +72,10 @@ But first, we’ll have to prove that the sum of any 3x3 magic square really is 
 <p>The first attempt that one can think of is using computers to just get a magic square of squares.<br>
 Ignoring the fact that it has been done(and upto the trillions) to do so we’d need a program.<br>
 Since the program doesn’t need to be heavily optimized we’ll just write it in python.</p>
-</section>
-<section id="the-program" class="level1">
-<h1>The program</h1>
+<section id="the-program" class="level2">
+<h2 class="anchored" data-anchor-id="the-program">The program</h2>
 <p>This is a simple python code for finding magic square of squares. A naïve approach to be sure but spamming for loops works well enough.<br>
-The method is to look for magic square of squares using the pythagorean quadruples, since there is a way to parametricallly generate them.</p>
+The method used is to look for magic square of squares using the pythagorean quadruples. For Pythagorean quadruples can be parametrically generated with the following formula. <img src="https://latex.codecogs.com/png.latex?a%20=%20(m%C2%B2+n%C2%B2-p%C2%B2-q%C2%B2),%5C%20b%20=%202(mq+np),%5C%20c%20=%202(nq-mp),%5C%20d%20=%20m%C2%B2+n%C2%B2+p%C2%B2+q%C2%B2"></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"></span>
 <span id="cb1-2"><span class="im" style="color: #00769E;
 background-color: null;
@@ -126,7 +128,7 @@ background-color: null;
 font-style: inherit;">    Uses the parametric form:</span></span>
 <span id="cb1-14"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">        a = |m²+n²-p²-q²|,  b = 2(mq+np),  c = 2|nq-mp|</span></span>
+font-style: inherit;">        a = (m²+n²-p²-q²),  b = 2(mq+np),  c = 2(nq-mp)</span></span>
 <span id="cb1-15"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">        d =  m²+n²+p²+q²</span></span>
@@ -2861,6 +2863,98 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">)"</span>)</span></code></pre></div></div>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>Here are the results when d = 10,000 in a pie chart.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> matplotlib <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb2-2"></span>
+<span id="cb2-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Data to plot</span></span>
+<span id="cb2-4">labels <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Apples'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Bananas'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Cherries'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Dates'</span>]</span>
+<span id="cb2-5">sizes <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>]</span>
+<span id="cb2-6">colors <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'gold'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'yellowgreen'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lightcoral'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lightskyblue'</span>]</span>
+<span id="cb2-7"></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create the pie chart</span></span>
+<span id="cb2-9">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>))</span>
+<span id="cb2-10">plt.pie(sizes, labels<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>labels, colors<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>colors, autopct<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%1.1f%%</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>, startangle<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">140</span>)</span>
+<span id="cb2-11"></span>
+<span id="cb2-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Equal aspect ratio ensures that pie is drawn as a circle</span></span>
+<span id="cb2-13">plt.axis(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'equal'</span>)  </span>
+<span id="cb2-14"></span>
+<span id="cb2-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add a title and display the chart</span></span>
+<span id="cb2-16">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Placeholder Pie Chart'</span>)</span>
+<span id="cb2-17">plt.show()</span></code></pre></div></div>
 
 
 </section>

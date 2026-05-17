@@ -1,22 +1,22 @@
 ---
-title: "The sum of a magic square of squares must be a non-power"
+title: "The Sum of a Magic Square of Squares Must Be an Odd-Power"
 author: "Hyun Joon"
 date: "2026-05-10"
 categories: ["magic squares"]
 format: html
 ---
 
-## Motivations
+# Motivation
 After looking at the results from the codes. One can guess that there isn't a 3x3 magic square of squares whose sum is a perfect square.
 At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share
 That its sum is equal to 3 times the number in the center.
 With this simple fact a simple proof by contradiction would seem to work best, for we leverage the irrationality of the square root of 3.  
 But first, we'll have to prove that the sum of any 3x3 magic square really is 3 times its center number
 
-### The Proof for the Fun Fact
+## The Proof for the Fun Fact
 
 
-## The proof for squares
+## The Proof for Squares
 
 
 # Observations & Generalizations
@@ -26,10 +26,11 @@ The proof for squares seems to be easily generalizable to any even power and wit
 
 "PLACE_HOLDER"
 
+## For Odd Powers
 
-##For All Odd Powers
-
-"PLACE_HOLDER"
+A similar proof was thought of for all odd powers, but after further inspection the proof didn't work so unfortunately there isn't one for all odd powers.  
+In fact, contrary to expectations any odd power can't be disproven to be the sum only leverging the irrationality of 3.
+There might be other ways of disproving specific odd powers of all odd powers all together, but it hasn't been found.
 
 # Conclusion
-With these simple proof the sum for a 3x3 magic square is a non-power, like $1, 2, 3, 5, 6, 7, 12$, et cetera.
+With these simple proof the sum for a 3x3 magic square is an odd power, like $1, 2, 3, 5, 6, 7, 8, 10, 11, 12, \text{etc.}$
