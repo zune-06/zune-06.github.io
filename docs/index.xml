@@ -23,7 +23,7 @@
 
 <section id="motivation" class="level1">
 <h1>Motivation</h1>
-<p>After looking at the results from the codes. One can guess that there isn’t a 3x3 magic square of squares whose sum is a perfect square. At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share That its sum is equal to 3 times the number in the center. With this simple fact a simple proof by contradiction would seem to work best, for we leverage the irrationality of the square root of 3.<br>
+<p>After looking at the results from the code. One can guess that there isn’t a 3x3 magic square of squares whose sum is a perfect square. At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share That its sum is equal to 3 times the number in the center. With this simple fact a simple proof by contradiction would seem to work best, for we leverage the irrationality of the square root of 3.<br>
 But first, we’ll have to prove that the sum of any 3x3 magic square really is 3 times its center number</p>
 <section id="the-proof-for-the-fun-fact" class="level2">
 <h2 class="anchored" data-anchor-id="the-proof-for-the-fun-fact">The Proof for the Fun Fact</h2>

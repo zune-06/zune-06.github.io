@@ -7,7 +7,7 @@ format: html
 ---
 
 # Motivation
-After looking at the results from the codes. One can guess that there isn't a 3x3 magic square of squares whose sum is a perfect square.
+After looking at the results from the code. One can guess that there isn't a 3x3 magic square of squares whose sum is a perfect square.
 At first this seemed very hard to prove, well that is until a fun fact about all 3 by 3 magic squares share
 That its sum is equal to 3 times the number in the center.
 With this simple fact a simple proof by contradiction would seem to work best, for we leverage the irrationality of the square root of 3.  
