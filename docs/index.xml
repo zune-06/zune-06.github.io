@@ -27,6 +27,15 @@
 But first, we’ll have to prove that the sum of any 3x3 magic square really is 3 times its center number</p>
 <section id="the-proof-for-the-fun-fact" class="level2">
 <h2 class="anchored" data-anchor-id="the-proof-for-the-fun-fact">The Proof for the Fun Fact</h2>
+<p>For any 3 by 3 magic square the sum is equal to 3 times its center value. This surprising is pretty simple to prove. First, an arbitrary 3x3 magic square: <img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Barray%7D%7Bc%7Cc%7Cc%7D%0AA%20&amp;%20B%20&amp;%20C%20%5C%5C%20%5Chline%0AD%20&amp;%20E%20&amp;%20F%20%5C%5C%20%5Chline%0AG%20&amp;%20H%20&amp;%20I%0A%5Cend%7Barray%7D%0A"><br>
+Now because this is a magic square its elements, in each row, column, and diagonal, when summed adds to a single value. Let’s call this value S.<br>
+<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A&amp;%5Ctext%7BSo,%20we%20have%7D%5C%5C%0A&amp;A%20+%20B%20+%20C%20=%20S,%5C%20D%20+%20E%20+%20F%20=%20S,%5C%20G%20+%20H%20+%20I%20=%20S%5C%20%5Ctext%7Bfor%20each%20row%7D%5C%5C%0A&amp;A%20+%20D%20+%20G%20=%20S,%5C%20B%20+%20E%20+%20H%20=%20S,%5C%20C%20+%20F%20+%20I%20=%20S%5C%20%5Ctext%7Bfor%20each%20column%7D%5C%5C%0A&amp;A%20+%20E%20+%20I%20=%20S,%5C%20C%20+%20E%20+%20G%20=%20S%5C%20%5Ctext%7Bfor%20each%20diagonal%7D%5C%5C%0A%5Cend%7Balign*%7D"></p>
+<p>Now, take the four equations <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0AD%20+%20E%20+%20F%20=%20S%20%5C%5C%20A%20+%20E%20+%20I%20=%20S%20%5C%5C%20B%20+%20E%20+%20H%20=%20S%20%5C%5C%20C%20+%20E%20+%20G%20=%20S%0A%5Cend%7Balign*%7D"><br>
+Observe that <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A4S%20&amp;=%20(D%20+%20E%20+%20F)%20+%20(A%20+%20E%20+%20I)%20+%20(B%20+%20E%20+%20H)%20+%20(C%20+%20E%20+%20G)%5C%5C%0A&amp;=%20D%20+%20E%20+%20F%20+%20A%20+%20E%20+%20I%20+%20B%20+%20E%20+%20H%20+%20C%20+%20E%20+%20G%0A%5Cend%7Balign*%7D"><br>
+Suggestively rewrite the right most side and left most side, and collect like terms <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A4S%20&amp;=%20E%20+%20E%20+%20E%20+%20A%20+%20B%20+%20C%20+%20D%20+%20E%20+%20F%20+%20G%20+%20H%20+%20I%5C%5C%0A&amp;=%203E%20+%20(A%20+%20B%20+%20C)%20+%20(D%20+%20E%20+%20F)%20+%20(G%20+%20H%20+%20I)%0A%5Cend%7Balign*%7D"><br>
+Remember the three equations <img src="https://latex.codecogs.com/png.latex?A%20+%20B%20+%20C%20=%20S,%5C%20D%20+%20E%20+%20F%20=%20S,%5C%20G%20+%20H%20+%20I%20=%20S"><br>
+Simplify the previous expression with it, and collect like terms <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Balign*%7D%0A&amp;4S%20=%203E%20+%20(A%20+%20B%20+%20C)%20+%20(D%20+%20E%20+%20F)%20+%20(G%20+%20H%20+%20I)%20=%203E%20+%203S%5C%5C%0A&amp;%5CLongrightarrow%5C%204S%20=%203E%20+%203S%5C%5C%0A&amp;%5Ctherefore%20S%20=%203E%0A%5Cend%7Balign*%7D"></p>
+<p>Hence, it has been demonstrated that the sum for an arbitrary 3 by 3 magic square is 3 times its center value.</p>
 </section>
 <section id="the-proof-for-squares" class="level2">
 <h2 class="anchored" data-anchor-id="the-proof-for-squares">The Proof for Squares</h2>

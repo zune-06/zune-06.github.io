@@ -188,6 +188,38 @@ window.Quarto = {
 But first, we’ll have to prove that the sum of any 3x3 magic square really is 3 times its center number</p>
 <section id="the-proof-for-the-fun-fact" class="level2">
 <h2 class="anchored" data-anchor-id="the-proof-for-the-fun-fact">The Proof for the Fun Fact</h2>
+<p>For any 3 by 3 magic square the sum is equal to 3 times its center value. This surprising is pretty simple to prove. First, an arbitrary 3x3 magic square: <span class="math display">\[
+\begin{array}{c|c|c}
+A &amp; B &amp; C \\ \hline
+D &amp; E &amp; F \\ \hline
+G &amp; H &amp; I
+\end{array}
+\]</span><br>
+Now because this is a magic square its elements, in each row, column, and diagonal, when summed adds to a single value. Let’s call this value S.<br>
+<span class="math display">\[\begin{align*}
+&amp;\text{So, we have}\\
+&amp;A + B + C = S,\ D + E + F = S,\ G + H + I = S\ \text{for each row}\\
+&amp;A + D + G = S,\ B + E + H = S,\ C + F + I = S\ \text{for each column}\\
+&amp;A + E + I = S,\ C + E + G = S\ \text{for each diagonal}\\
+\end{align*}\]</span></p>
+<p>Now, take the four equations <span class="math display">\[\begin{align*}
+D + E + F = S \\ A + E + I = S \\ B + E + H = S \\ C + E + G = S
+\end{align*}\]</span><br>
+Observe that <span class="math display">\[\begin{align*}
+4S &amp;= (D + E + F) + (A + E + I) + (B + E + H) + (C + E + G)\\
+&amp;= D + E + F + A + E + I + B + E + H + C + E + G
+\end{align*}\]</span><br>
+Suggestively rewrite the right most side and left most side, and collect like terms <span class="math display">\[\begin{align*}
+4S &amp;= E + E + E + A + B + C + D + E + F + G + H + I\\
+&amp;= 3E + (A + B + C) + (D + E + F) + (G + H + I)
+\end{align*}\]</span><br>
+Remember the three equations <span class="math inline">\(A + B + C = S,\ D + E + F = S,\ G + H + I = S\)</span><br>
+Simplify the previous expression with it, and collect like terms <span class="math display">\[\begin{align*}
+&amp;4S = 3E + (A + B + C) + (D + E + F) + (G + H + I) = 3E + 3S\\
+&amp;\Longrightarrow\ 4S = 3E + 3S\\
+&amp;\therefore S = 3E
+\end{align*}\]</span></p>
+<p>Hence, it has been demonstrated that the sum for an arbitrary 3 by 3 magic square is 3 times its center value.</p>
 </section>
 <section id="the-proof-for-squares" class="level2">
 <h2 class="anchored" data-anchor-id="the-proof-for-squares">The Proof for Squares</h2>
